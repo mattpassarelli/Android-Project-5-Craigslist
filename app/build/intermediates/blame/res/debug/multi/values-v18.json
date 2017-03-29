@@ -1,5 +1,29 @@
 [
     {
+        "outputFile": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 48,
+                    "endOffset": 99
+                },
+                "from": {
+                    "file": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\values-v18\\values-v18.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 48,
+                        "endOffset": 273
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v18\\values-v18.xml",
         "map": [
             {

@@ -6,4 +6,13 @@
         <item>Price</item>
         <item>Location</item>
    </string-array>
+
+    <string-array name="websites">websites
+        <item>CNU - Defender</item>
+        <item>Pair - Teton Software - Bikes</item>
+    </string-array>
+    <string-array name="URLs">URLs
+        <item>http://www.pcs.cnu.edu/~kperkins/bikes/bikes.json</item>
+        <item>http://www.tetonsoftware.com/bikes/bikes.json</item>
+    </string-array>
 </resources>

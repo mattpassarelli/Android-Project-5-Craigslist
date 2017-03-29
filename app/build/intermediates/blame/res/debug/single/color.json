@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
@@ -12,8 +16,24 @@
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
@@ -28,11 +48,27 @@
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
         "source": "C:\\Users\\Matt\\.android\\build-cache\\25353ea082c4c3c2c50e3f2e123fac9bd59cb4f9\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\Matt\\.android\\build-cache\\f2a74afd6f2fb1d8b77b94c424d2e97bbe31e673\\output\\res\\color\\abc_primary_text_material_light.xml"
     }
 ]
