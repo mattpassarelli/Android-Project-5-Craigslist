@@ -23,6 +23,8 @@ public class Activity_ListView extends AppCompatActivity {
     ListView my_listview;
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private URL url;
+    private DownloadTask down;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,29 +47,32 @@ public class Activity_ListView extends AppCompatActivity {
 
         String temp = prefs.getString("url", null);
 
-
-        try {
-            if (temp != null) {
-                url = new URL(prefs.getString("url", getString(R.string.error)));
-            } else {
-                url = new URL("http://www.tetonsoftware.com/bikes/bikes.json");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-        listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                try {
+        if(checkConnections()) {
+            //Toast.makeText(this, "Connection is good", Toast.LENGTH_SHORT).show();
+            try {
+                if (temp != null) {
                     url = new URL(prefs.getString("url", getString(R.string.error)));
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
+                } else {
+                    url = new URL("http://www.tetonsoftware.com/bikes/bikes.json");
                 }
-                Toast.makeText(getApplicationContext(), "Site changed to: " + url.toString(), Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        };
+                runDownload();
+
+            listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                    try {
+                        url = new URL(prefs.getString("url", getString(R.string.error)));
+                        runDownload();
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    }
+                    Toast.makeText(getApplicationContext(), "Site changed to: " + url.toString(), Toast.LENGTH_SHORT).show();
+                }
+            };
+        }
 
         prefs.registerOnSharedPreferenceChangeListener(listener);
 
@@ -79,6 +84,24 @@ public class Activity_ListView extends AppCompatActivity {
 
         //TODO call a thread to get the JSON list of bikes
         //TODO when it returns it should process this data with bindData
+    }
+
+    private boolean checkConnections() {
+        if(ConnectivityCheck.isNetworkReachable(this) || ConnectivityCheck.isWifiReachable(this))
+        {
+            return true;
+        }
+        else
+        {
+            ConnectivityCheck.isNetworkReachableAlertUserIfNot(this);
+            return false;
+        }
+    }
+
+    private void runDownload() {
+        down = new DownloadTask(this);
+
+        down.execute(url.toString());
     }
 
     private void setupListViewOnClickListener() {

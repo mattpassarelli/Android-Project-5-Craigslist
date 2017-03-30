@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -117,7 +118,11 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        //TODO Your Stuff Here
+        Toast.makeText(myActivity, result , Toast.LENGTH_SHORT).show();
+
+        //TODO parse info
+
+        detach();
     }
 
     /*
