@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Activity_ListView extends AppCompatActivity {
 
@@ -24,6 +27,7 @@ public class Activity_ListView extends AppCompatActivity {
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private URL url;
     private DownloadTask down;
+    private List<BikeData> data;
 
 
     @Override
@@ -47,7 +51,7 @@ public class Activity_ListView extends AppCompatActivity {
 
         String temp = prefs.getString("url", null);
 
-        if(checkConnections()) {
+        if (checkConnections()) {
             //Toast.makeText(this, "Connection is good", Toast.LENGTH_SHORT).show();
             try {
                 if (temp != null) {
@@ -58,7 +62,7 @@ public class Activity_ListView extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-                runDownload();
+            runDownload();
 
             listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
                 @Override
@@ -87,12 +91,9 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private boolean checkConnections() {
-        if(ConnectivityCheck.isNetworkReachable(this) || ConnectivityCheck.isWifiReachable(this))
-        {
+        if (ConnectivityCheck.isNetworkReachable(this) || ConnectivityCheck.isWifiReachable(this)) {
             return true;
-        }
-        else
-        {
+        } else {
             ConnectivityCheck.isNetworkReachableAlertUserIfNot(this);
             return false;
         }
@@ -115,8 +116,10 @@ public class Activity_ListView extends AppCompatActivity {
      *
      * @param JSONString complete string of all bikes
      */
-    private void bindData(String JSONString) {
+    public void bindData(String JSONString) {
+        data = JSONHelper.parseAll(JSONString);
 
+        Log.d("Bikes", data.toString());
     }
 
 

@@ -1,5 +1,9 @@
 package com.example.listview;
 
+import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
+
 /**
  * See builderpattern example project for how to do builders
  * they are essential when constructing complicated objects and
@@ -10,6 +14,15 @@ public class BikeData {
     public static final int MODEL = 1;
     public static final int PRICE = 2;
     public static final int LOCATION = 3;
+    private static String company;
+    private static String model;
+    private static double price;
+    private static String description;
+    private static String location;
+    private static String date;
+    private static String picture;
+    private static String link;
+
 
     //TODO make all BikeData fields final
 
@@ -18,12 +31,30 @@ public class BikeData {
      */
     @Override
     public String toString() {
-        // TODO figure out how to print all bikedata out for dialogs
-        return "TODO";
+        return "Company: " + company +
+                "\n" +
+                "Model: " + model +
+                "\n" +
+                "Price: " + price +
+                "\n" +
+                "Location: " + location +
+                "\n" +
+                "Date Listed: " + date +
+                "\n" +
+                "Description: " + description +
+                "\n" +
+                "Link: " + link;
     }
 
     private BikeData(Builder b) {
-        //TODO
+        company = b.Company;
+        model = b.Model;
+        price = b.Price;
+        description = b.Description;
+        location = b.Location;
+        date = b.Date;
+        picture = b.Picture;
+        link = b.Link;
     }
 
     /**
@@ -53,26 +84,33 @@ public class BikeData {
         // notice it returns this bulder
         // makes it suitable for chaining
         Builder setDescription(String Description) {
-            //TODO manage this
+            this.Description = Description;
+
             return this;
         }
 
         Builder setLocation(String Location) {
+            this.Location = Location;
 
             return this;
         }
 
         Builder setDate(String Date) {
 
+            this.Date = Date;
+
             return this;
         }
 
         Builder setPicture(String Picture) {
+            this.Picture = Picture;
 
             return this;
         }
 
         Builder setLink(String Link) {
+            this.Link = Link;
+
 
             return this;
         }

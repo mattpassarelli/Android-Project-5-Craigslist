@@ -52,8 +52,9 @@ public class JSONHelper {
             int numbBikes = jo.length();
             Log.d(TAG, "Number of bikes=" + Integer.toString(numbBikes));
 
-            for (int i = 0; i < numbBikes; ++i) {
+            for (int i = 0; i < numbBikes; i++) {
                 JSONObject rec = jo.getJSONObject(i);
+
 
                 //first add the mandatory fields
                 BikeData.Builder myDataBuilder = new BikeData.Builder(rec.getString(COMPANY), rec.getString(MODEL), rec.getDouble(PRICE))
@@ -63,6 +64,7 @@ public class JSONHelper {
                         .setPicture(rec.getString(PICTURE))
                         .setLink(rec.getString(LINK));
                 myList.add(myDataBuilder.build());
+
             }
 
         } catch (JSONException e) {
