@@ -14,17 +14,14 @@ public class BikeData {
     public static final int MODEL = 1;
     public static final int PRICE = 2;
     public static final int LOCATION = 3;
-    private static String company;
-    private static String model;
-    private static double price;
-    private static String description;
-    private static String location;
-    private static String date;
-    private static String picture;
-    private static String link;
-
-
-    //TODO make all BikeData fields final
+    private final String company;
+    private final String model;
+    private final double price;
+    private final String description;
+    private final String location;
+    private final String date;
+    private final String picture;
+    private final String link;
 
     /* (non-Javadoc)
      * @see java.lang.Object#toString()

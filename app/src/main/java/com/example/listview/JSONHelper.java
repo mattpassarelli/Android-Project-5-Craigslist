@@ -64,11 +64,9 @@ public class JSONHelper {
                         .setPicture(rec.getString(PICTURE))
                         .setLink(rec.getString(LINK));
                 myList.add(myDataBuilder.build());
-
             }
 
         } catch (JSONException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return myList;

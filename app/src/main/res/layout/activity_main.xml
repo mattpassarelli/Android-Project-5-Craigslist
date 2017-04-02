@@ -13,9 +13,10 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:popupBackground="@color/White" />
     </android.support.v7.widget.Toolbar>
 
 

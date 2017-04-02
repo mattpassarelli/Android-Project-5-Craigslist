@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.MalformedURLException;
@@ -40,6 +45,8 @@ public class Activity_ListView extends AppCompatActivity {
 
         //listview that you will operate on
         my_listview = (ListView) findViewById(R.id.lv);
+
+
         spinner = (Spinner) findViewById(R.id.spinner);
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -81,13 +88,28 @@ public class Activity_ListView extends AppCompatActivity {
         prefs.registerOnSharedPreferenceChangeListener(listener);
 
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
+                ((TextView) parent.getChildAt(0)).setTextSize(20);
+
+                //Toast.makeText(getApplicationContext(), "" + ((TextView) parent.getChildAt(0)).getText(), Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
         setupSimpleSpinner();
 
         //set the listview onclick listener
         setupListViewOnClickListener();
-
-        //TODO call a thread to get the JSON list of bikes
-        //TODO when it returns it should process this data with bindData
     }
 
     private boolean checkConnections() {
@@ -106,7 +128,7 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void setupListViewOnClickListener() {
-        //TODO you want to call my_listviews setOnItemClickListener with a new instance of android.widget.AdapterView.OnItemClickListener() {
+        //TODO you want to call my_listviews setOnItemClickListener with a new instance of android.widget.AdapterView.OnItemClickListener()
     }
 
     /**
@@ -118,8 +140,6 @@ public class Activity_ListView extends AppCompatActivity {
      */
     public void bindData(String JSONString) {
         data = JSONHelper.parseAll(JSONString);
-
-        Log.d("Bikes", data.toString());
     }
 
 
@@ -131,7 +151,16 @@ public class Activity_ListView extends AppCompatActivity {
      * dontforget to bind the listener to the spinner with setOnItemSelectedListener!
      */
     private void setupSimpleSpinner() {
+        List<String> options = new ArrayList<>();
 
+        options.add("Company");
+        options.add("Location");
+        options.add("Price");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, options);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
     }
 
     @Override

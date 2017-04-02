@@ -56,7 +56,6 @@ public class DownloadTask extends AsyncTask<String, Void, String> {
                 myQuery += name + "=" + URLEncoder.encode(value, "utf-8");
             }
         } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return this;
