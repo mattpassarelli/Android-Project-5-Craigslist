@@ -32,7 +32,7 @@ public class BikeData {
                 "\n" +
                 "Model: " + model +
                 "\n" +
-                "Price: " + price +
+                "Price: $" + price +
                 "\n" +
                 "Location: " + location +
                 "\n" +

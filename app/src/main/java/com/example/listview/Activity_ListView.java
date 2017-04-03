@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -130,15 +131,15 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void setupListViewOnClickListener() {
-        //TODO you want to call my_listviews setOnItemClickListener with a new instance of android.widget.AdapterView.OnItemClickListener()
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
-                BikeData temp = (BikeData) parent.getItemAtPosition(0);
+                AlertDialog.Builder alert = new AlertDialog.Builder(new ContextThemeWrapper(Activity_ListView.this, R.style.AppTheme));
+                BikeData temp = (BikeData) parent.getItemAtPosition(position);
 
-
-                Toast.makeText(getApplicationContext(), temp.toString(), Toast.LENGTH_SHORT).show();
+                alert.setMessage(temp.toString());
+                alert.setPositiveButton("OK", null);
+                alert.create().show();
             }
         });
 

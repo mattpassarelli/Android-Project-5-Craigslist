@@ -25,8 +25,8 @@ ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\
 		ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml:8:22-76
 application
 ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml:10:5-29:19
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Matt\.android\build-cache\e92b277ddccad586f51afa5f30ed588e391426b6\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Matt\.android\build-cache\3b987189c2305e1e1b5c05268415706bf64d626a\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Matt\.android\build-cache\94d77891444898423b9fea605a84a57339732901\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Matt\.android\build-cache\c27b54f4240581b78965aff189bc3d2eb0bc30cf\output\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml:13:9-41
 	android:allowBackup
@@ -61,8 +61,8 @@ ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\
 		ADDED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml:26:27-74
 uses-sdk
 INJECTED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Matt\.android\build-cache\e92b277ddccad586f51afa5f30ed588e391426b6\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Matt\.android\build-cache\3b987189c2305e1e1b5c05268415706bf64d626a\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Matt\.android\build-cache\94d77891444898423b9fea605a84a57339732901\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Matt\.android\build-cache\c27b54f4240581b78965aff189bc3d2eb0bc30cf\output\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Matt\Documents\School\CPSC 475\Android-Project-5-Craigslist\app\src\main\AndroidManifest.xml
