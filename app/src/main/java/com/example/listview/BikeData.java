@@ -54,6 +54,49 @@ public class BikeData {
         link = b.Link;
     }
 
+    public String getCompany()
+    {
+        return company;
+    }
+
+    public String getModel()
+    {
+        return model;
+    }
+
+    public double getPrice()
+    {
+        return price;
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public String getLocation()
+    {
+        return location;
+    }
+
+    public String getDate()
+    {
+        return date;
+    }
+
+    public String getPicture()
+    {
+        return picture;
+    }
+
+    public String getLink()
+    {
+        return link;
+    }
+
+
+
+
     /**
      * @author lynn builder pattern, see page 11 Effective Java UserData mydata
      *         = new

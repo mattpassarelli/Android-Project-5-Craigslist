@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -105,8 +107,8 @@ public class Activity_ListView extends AppCompatActivity {
         });
 
 
-
         setupSimpleSpinner();
+
 
         //set the listview onclick listener
         setupListViewOnClickListener();
@@ -129,7 +131,25 @@ public class Activity_ListView extends AppCompatActivity {
 
     private void setupListViewOnClickListener() {
         //TODO you want to call my_listviews setOnItemClickListener with a new instance of android.widget.AdapterView.OnItemClickListener()
+        my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getApplicationContext());
+                BikeData temp = (BikeData) parent.getItemAtPosition(0);
+
+
+                Toast.makeText(getApplicationContext(), temp.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
+    private void setupListView() {
+        ListAdapter adapter = new CustomAdapter(this, data);
+
+        my_listview.setAdapter(adapter);
+    }
+
 
     /**
      * Takes the string of bikes, parses it using JSONHelper
@@ -140,6 +160,8 @@ public class Activity_ListView extends AppCompatActivity {
      */
     public void bindData(String JSONString) {
         data = JSONHelper.parseAll(JSONString);
+
+        setupListView();
     }
 
 
@@ -157,7 +179,7 @@ public class Activity_ListView extends AppCompatActivity {
         options.add("Location");
         options.add("Price");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, options);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
