@@ -24,17 +24,17 @@ import android.widget.Toast;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Activity_ListView extends AppCompatActivity {
 
 
     private SharedPreferences prefs;
-    Spinner spinner;
-    ListView my_listview;
+    private Spinner spinner;
+    private ListView my_listView;
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private URL url;
-    private DownloadTask down;
     private List<BikeData> data;
 
 
@@ -46,8 +46,8 @@ public class Activity_ListView extends AppCompatActivity {
         // Change title to indicate sort by
         setTitle("Sort by:");
 
-        //listview that you will operate on
-        my_listview = (ListView) findViewById(R.id.lv);
+        //listView that you will operate on
+        my_listView = (ListView) findViewById(R.id.lv);
 
 
         spinner = (Spinner) findViewById(R.id.spinner);
@@ -83,7 +83,6 @@ public class Activity_ListView extends AppCompatActivity {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
-                    Toast.makeText(getApplicationContext(), "Site changed to: " + url.toString(), Toast.LENGTH_SHORT).show();
                 }
             };
         }
@@ -97,8 +96,9 @@ public class Activity_ListView extends AppCompatActivity {
                 ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 ((TextView) parent.getChildAt(0)).setTextSize(20);
 
-                //Toast.makeText(getApplicationContext(), "" + ((TextView) parent.getChildAt(0)).getText(), Toast.LENGTH_SHORT).show();
-
+                if(data != null) {
+                    sortList(spinner.getSelectedItem().toString());
+                }
             }
 
             @Override
@@ -111,8 +111,25 @@ public class Activity_ListView extends AppCompatActivity {
         setupSimpleSpinner();
 
 
-        //set the listview onclick listener
+        //set the listView onclick listener
         setupListViewOnClickListener();
+    }
+
+    private void sortList(String childAt) {
+        switch (childAt) {
+            case "Company":
+                Collections.sort(data, new ComparatorModelCompany());
+                break;
+            case "Location":
+                Collections.sort(data, new ComparatorModelLocation());
+                break;
+            case "Price":
+                Collections.sort(data, new ComparatorModelPrice());
+                break;
+            default:
+                break;
+        }
+        setupListView();
     }
 
     private boolean checkConnections() {
@@ -125,13 +142,13 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void runDownload() {
-        down = new DownloadTask(this);
+        DownloadTask down = new DownloadTask(this);
 
         down.execute(url.toString());
     }
 
     private void setupListViewOnClickListener() {
-        my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        my_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog.Builder alert = new AlertDialog.Builder(new ContextThemeWrapper(Activity_ListView.this, R.style.AppTheme));
@@ -148,7 +165,7 @@ public class Activity_ListView extends AppCompatActivity {
     private void setupListView() {
         ListAdapter adapter = new CustomAdapter(this, data);
 
-        my_listview.setAdapter(adapter);
+        my_listView.setAdapter(adapter);
     }
 
 
