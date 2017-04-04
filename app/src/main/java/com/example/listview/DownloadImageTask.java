@@ -12,6 +12,7 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -19,6 +20,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     private static final String TAG = "DownloadTask";
     private static final int DEFAULTBUFFERSIZE = 50;
     private static final int NODATA = -1;
+    private final WeakReference<ImageView> imageViewReference;
 
     private String pictureID;
     private ImageView imageView;
@@ -29,6 +31,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         this.imageView = imageView;
         Resources resources = imageView.getContext().getResources();
         this.placeholder = resources.getDrawable(R.drawable.generic);
+        imageViewReference = new WeakReference<ImageView>(imageView);
     }
 
     @Override
@@ -101,6 +104,21 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected void onPostExecute(Bitmap result) {
-        //TODO Your Stuff Here
+        if (isCancelled()) {
+            result = null;
+        }
+
+        if (imageViewReference != null) {
+            ImageView imageView = imageViewReference.get();
+            if (imageView != null) {
+                if (result != null) {
+                    imageView.setImageBitmap(result);
+                }
+                else {
+                    placeholder = imageView.getContext().getResources().getDrawable(R.drawable.generic);
+                    imageView.setImageDrawable(placeholder);
+                }
+            }
+        }
     }
 }

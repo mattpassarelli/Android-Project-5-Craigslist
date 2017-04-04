@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -118,13 +119,13 @@ public class Activity_ListView extends AppCompatActivity {
     private void sortList(String childAt) {
         switch (childAt) {
             case "Company":
-                Collections.sort(data, new ComparatorModelCompany());
+                Collections.sort(data, new ComparatorCompany());
                 break;
             case "Location":
-                Collections.sort(data, new ComparatorModelLocation());
+                Collections.sort(data, new ComparatorLocation());
                 break;
             case "Price":
-                Collections.sort(data, new ComparatorModelPrice());
+                Collections.sort(data, new ComparatorPrice());
                 break;
             default:
                 break;

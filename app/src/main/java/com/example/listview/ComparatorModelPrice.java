@@ -2,7 +2,7 @@ package com.example.listview;
 
 import java.util.Comparator;
 
-class ComparatorModelPrice implements Comparator<BikeData> {
+class ComparatorPrice implements Comparator<BikeData> {
     @Override
     public int compare(BikeData lhs, BikeData rhs) {
 
