@@ -6,6 +6,12 @@
         android:id="@+id/action_settings"
         android:icon="@drawable/action_settings1"
         app:showAsAction="never"
-        android:title="Settings"></item>
+        android:title="@string/settings" />
 
+    <item
+        android:id = "@+id/reset"
+        android:icon="@drawable/ic_cached_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="@string/reset"
+        />
 </menu>

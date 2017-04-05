@@ -1,5 +1,6 @@
 package com.example.listview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -18,16 +19,17 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 
-public class CustomAdapter extends ArrayAdapter<BikeData> {
+class CustomAdapter extends ArrayAdapter<BikeData> {
 
     private final LayoutInflater layoutInflater;
 
 
-    public CustomAdapter(@NonNull Context context, List<BikeData> resource) {
+    CustomAdapter(@NonNull Context context, List<BikeData> resource) {
         super(context, R.layout.listview_row_layout, resource);
         layoutInflater = LayoutInflater.from(context);
     }
 
+    @SuppressLint({"SetTextI18n", "InflateParams"})
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

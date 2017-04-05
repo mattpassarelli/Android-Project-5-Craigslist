@@ -2,7 +2,6 @@ package com.example.listview;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -10,7 +9,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +18,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -58,7 +55,6 @@ public class Activity_ListView extends AppCompatActivity {
         //toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
 
         String temp = prefs.getString("url", null);
 
@@ -180,6 +176,8 @@ public class Activity_ListView extends AppCompatActivity {
     public void bindData(String JSONString) {
         data = JSONHelper.parseAll(JSONString);
 
+        sortList(spinner.getItemAtPosition(0).toString());
+
         setupListView();
     }
 
@@ -220,8 +218,15 @@ public class Activity_ListView extends AppCompatActivity {
                 Intent myIntent = new Intent(this, activityPreference.class);
                 startActivity(myIntent);
                 break;
+            case R.id.reset:
+                resetListAndSpinner();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void resetListAndSpinner() {
+        spinner.setSelection(0);
+        runDownload();
     }
 }

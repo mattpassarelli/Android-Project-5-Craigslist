@@ -592,9 +592,10 @@ int drawable action_settings_dark 0x7f020046
 int drawable bike 0x7f020047
 int drawable bike3 0x7f020048
 int drawable generic 0x7f020049
-int drawable ic_launcher 0x7f02004a
-int drawable ic_launcher2 0x7f02004b
-int drawable notification_template_icon_bg 0x7f02004c
+int drawable ic_cached_white_24dp 0x7f02004a
+int drawable ic_launcher 0x7f02004b
+int drawable ic_launcher2 0x7f02004c
+int drawable notification_template_icon_bg 0x7f02004d
 int id Description 0x7f0d0056
 int id Model 0x7f0d0054
 int id Price 0x7f0d0055
@@ -656,6 +657,7 @@ int id parentPanel 0x7f0d002d
 int id progress_circular 0x7f0d0005
 int id progress_horizontal 0x7f0d0006
 int id radio 0x7f0d003b
+int id reset 0x7f0d0065
 int id screen 0x7f0d0014
 int id scrollIndicatorDown 0x7f0d0035
 int id scrollIndicatorUp 0x7f0d0032
@@ -767,10 +769,11 @@ int string hello_world 0x7f060016
 int string info 0x7f060017
 int string info_Descrip 0x7f060018
 int string menu_settings 0x7f060019
-int string settings 0x7f06001a
+int string reset 0x7f06001a
+int string settings 0x7f06001b
 int string status_bar_notification_info_overflow 0x7f060013
-int string tetonNAME 0x7f06001b
-int string tetonURL 0x7f06001c
+int string tetonNAME 0x7f06001c
+int string tetonURL 0x7f06001d
 int style AlertDialog_AppCompat 0x7f09007d
 int style AlertDialog_AppCompat_Light 0x7f09007e
 int style Animation_AppCompat_Dialog 0x7f09007f

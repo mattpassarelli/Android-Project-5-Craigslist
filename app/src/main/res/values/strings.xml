@@ -10,6 +10,7 @@
     <string name="info">Info</string>
     <string name="info_Descrip">Select which site to download JSON data from</string>
     <string name="error">Error</string>
+    <string name="reset">Reset</string>
 
 
 </resources>
