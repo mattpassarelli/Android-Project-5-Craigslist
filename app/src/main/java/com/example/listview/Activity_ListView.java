@@ -33,7 +33,7 @@ public class Activity_ListView extends AppCompatActivity {
     private ListView my_listView;
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private URL url;
-    private List<BikeData> data;
+    private List<BikeData> original, sorted; //see sortList() for explanation on two Lists
 
 
     @Override
@@ -93,7 +93,7 @@ public class Activity_ListView extends AppCompatActivity {
                 ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
                 ((TextView) parent.getChildAt(0)).setTextSize(20);
 
-                if(data != null) {
+                if (original != null) {
                     sortList(spinner.getSelectedItem().toString());
                 }
             }
@@ -104,7 +104,6 @@ public class Activity_ListView extends AppCompatActivity {
             }
         });
 
-
         setupSimpleSpinner();
 
 
@@ -113,15 +112,35 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void sortList(String childAt) {
+        /*
+            So I noticed that with only one List to store everything,
+            the sorting would get ruined. If you sorted by price, then
+            by Company, the sorted order wouldn't match up with the Company
+            sorted order when the app first launches. So two Lists allow
+            me to keep the original parsed List intact and use a second
+            List to sort through it and display that one on the ListView
+            so nothing gets messed up and sorted wrong. I feel smart
+            figuring this out :D
+         */
+        sorted = new ArrayList<>();
+
+        if (original != null) {
+            for (int i = 0; i < original.size(); i++) {
+                if (original != null) {
+                    sorted.add(original.get(i));
+                }
+            }
+        }
+
         switch (childAt) {
             case "Company":
-                Collections.sort(data, new ComparatorCompany());
+                Collections.sort(sorted, new ComparatorCompany());
                 break;
             case "Location":
-                Collections.sort(data, new ComparatorLocation());
+                Collections.sort(sorted, new ComparatorLocation());
                 break;
             case "Price":
-                Collections.sort(data, new ComparatorPrice());
+                Collections.sort(sorted, new ComparatorPrice());
                 break;
             default:
                 break;
@@ -160,7 +179,7 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void setupListView() {
-        ListAdapter adapter = new CustomAdapter(this, data);
+        ListAdapter adapter = new CustomAdapter(this, sorted);
 
         my_listView.setAdapter(adapter);
     }
@@ -174,7 +193,7 @@ public class Activity_ListView extends AppCompatActivity {
      * @param JSONString complete string of all bikes
      */
     public void bindData(String JSONString) {
-        data = JSONHelper.parseAll(JSONString);
+        original = JSONHelper.parseAll(JSONString);
 
         sortList(spinner.getItemAtPosition(0).toString());
 

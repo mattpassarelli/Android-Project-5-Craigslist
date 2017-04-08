@@ -1,19 +1,11 @@
 package com.example.listview;
 
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
-
 /**
  * See builderpattern example project for how to do builders
  * they are essential when constructing complicated objects and
  * with many optional fields
  */
 public class BikeData {
-    public static final int COMPANY = 0;
-    public static final int MODEL = 1;
-    public static final int PRICE = 2;
-    public static final int LOCATION = 3;
     private final String company;
     private final String model;
     private final double price;

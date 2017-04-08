@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\generic.jpg",
-        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\src\\main\\res\\drawable-hdpi\\generic.jpg"
-    },
-    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\generic.jpg",
         "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\src\\main\\res\\drawable-hdpi\\generic.jpg"
     }

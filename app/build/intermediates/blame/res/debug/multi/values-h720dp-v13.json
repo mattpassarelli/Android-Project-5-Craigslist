@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\P5_CraigsList_Skeleton\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 66,
-                    "endOffset": 117
-                },
-                "from": {
-                    "file": "C:\\Users\\Matt\\.android\\build-cache\\e92b277ddccad586f51afa5f30ed588e391426b6\\output\\res\\values-h720dp\\values-h720dp.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 232,
-                        "endColumn": 66,
-                        "endOffset": 294
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
         "map": [
             {
@@ -35,7 +11,7 @@
                     "endOffset": 117
                 },
                 "from": {
-                    "file": "C:\\Users\\Matt\\.android\\build-cache\\94d77891444898423b9fea605a84a57339732901\\output\\res\\values-h720dp\\values-h720dp.xml",
+                    "file": "C:\\Users\\Matt\\.android\\build-cache\\e92b277ddccad586f51afa5f30ed588e391426b6\\output\\res\\values-h720dp\\values-h720dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
