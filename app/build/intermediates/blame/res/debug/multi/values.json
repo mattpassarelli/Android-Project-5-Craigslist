@@ -12,7 +12,15 @@
                     "endOffset": 243
                 },
                 "from": {
-                    "file": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\src\\main\\res\\values\\Arrays.xml"
+                    "file": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Project-5-Craigslist\\app\\src\\main\\res\\values\\Arrays.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 394,
+                        "endLine": 16,
+                        "endColumn": 19,
+                        "endOffset": 585
+                    }
                 }
             },
             {

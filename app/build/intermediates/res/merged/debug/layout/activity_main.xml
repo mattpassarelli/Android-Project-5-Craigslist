@@ -15,18 +15,24 @@
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="10dp"
-            />
+            android:paddingRight="10dp" />
     </android.support.v7.widget.Toolbar>
 
-
-    <ListView
-        android:id="@+id/lv"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom = "true"
+        android:layout_alignParentBottom="true"
         android:layout_below="@id/toolbar">
-    </ListView>
+
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true">
+
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 </RelativeLayout>

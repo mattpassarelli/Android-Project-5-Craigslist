@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -48,7 +49,7 @@ class CustomAdapter extends ArrayAdapter<BikeData> {
             holder.description.setText(bike.getDescription());
             holder.price.setText("$" + bike.getPrice());
             if (holder.icon != null) {
-                new DownloadImageTask("", holder.icon).execute("http://www.tetonsoftware.com/bikes/" + bike.getPicture());
+                new DownloadImageTask("", holder.icon).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "http://www.tetonsoftware.com/bikes/" + bike.getPicture());
             }
         }
 

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ContextThemeWrapper;
@@ -34,6 +35,7 @@ public class Activity_ListView extends AppCompatActivity {
     private SharedPreferences.OnSharedPreferenceChangeListener listener;
     private URL url;
     private List<BikeData> original, sorted; //see sortList() for explanation on two Lists
+    private SwipeRefreshLayout refresh;
 
 
     @Override
@@ -50,6 +52,7 @@ public class Activity_ListView extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.spinner);
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        refresh = (SwipeRefreshLayout) findViewById(R.id.refresh);
 
 
         //toolbar
@@ -104,6 +107,13 @@ public class Activity_ListView extends AppCompatActivity {
             }
         });
 
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                resetListAndSpinner();
+            }
+        });
+
         setupSimpleSpinner();
 
 
@@ -138,6 +148,9 @@ public class Activity_ListView extends AppCompatActivity {
                 break;
             case "Location":
                 Collections.sort(sorted, new ComparatorLocation());
+                break;
+            case "Model":
+                Collections.sort(sorted, new ComparatorModel());
                 break;
             case "Price":
                 Collections.sort(sorted, new ComparatorPrice());
@@ -213,10 +226,11 @@ public class Activity_ListView extends AppCompatActivity {
 
         options.add("Company");
         options.add("Location");
+        options.add("Model");
         options.add("Price");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item, options);
+        adapter.setDropDownViewResource(R.layout.spinner_item);
 
         spinner.setAdapter(adapter);
     }
@@ -245,7 +259,11 @@ public class Activity_ListView extends AppCompatActivity {
     }
 
     private void resetListAndSpinner() {
+        refresh.setRefreshing(true);
+
         spinner.setSelection(0);
         runDownload();
+
+        refresh.setRefreshing(false);
     }
 }
